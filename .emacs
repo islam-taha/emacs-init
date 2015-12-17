@@ -30,14 +30,13 @@
 (package-initialize)
 
 ; list the packages you want
-(setq package-list '(abyss-theme adaptive-wrap afternoon-theme ahungry-theme airline-themes powerline alect-themes ample-theme anti-zenburn-theme atom-dark-theme atom-one-dark-theme aurora-theme auto-complete popup badger-theme base16-theme bitlbee bongo calmer-forest-theme clues-theme color-theme-modern color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow company cyberpunk-theme darcula-theme darkburn-theme darkmine-theme darktooth-theme ecb eclipse-theme find-file-in-project swiper flx-ido flx flymake-ruby flymake-easy git-gutter iedit jabber fsm leuven-theme light-soap-theme mark-multiple material-theme minimal-theme mmm-mode multiple-cursors popup powerline professional-theme slime-theme smyx-theme soft-morning-theme soft-stone-theme solarized-theme dash soothe-theme stekene-theme sublime-themes swiper tommyh-theme twilight-bright-theme ubuntu-theme underwater-theme yasnippet zenburn-theme zerodark-theme))
-
+(setq package-list '(adaptive-wrap airline-themes powerline auto-complete popup color-theme-modern darcula-theme ecb find-file-in-project swiper flx-ido flx flymake-ruby flymake-easy fsm git-gutter iedit mark-multiple mmm-mode multiple-cursors popup powerline solarized-theme dash swiper tommyh-theme twilight-bright-theme zenburn-theme))
 
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
 
-; install the missing packages
+;; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
@@ -45,8 +44,6 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
-(require 'yasnippet)
-(yas-global-mode 1)
 
 (add-hook 'html-mode-hook
           (lambda ()
